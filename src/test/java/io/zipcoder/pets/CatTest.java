@@ -5,6 +5,26 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CatTest {
+
+    @Test
+    public void testInheritance() {
+        Pet p = new Cat();
+        Assert.assertTrue(p instanceof Pet);
+    }
+
+    @Test
+    public void constructorWithNameTest() {
+        // Given
+        String expectedName = "Name of Cat";
+        Cat cat = new Cat(expectedName);
+
+        // When
+        String actualName = cat.getName();
+
+        // Then
+        Assert.assertEquals(expectedName, actualName);
+    }
+
     @Test
     public void catSpeakTest{
         Cat cat = new Cat(null);
@@ -13,8 +33,6 @@ public class CatTest {
         Assert.assertEquals(expected,actual);
     }
 
-
-
     @Test
     public void catGetNameTest{
         String expected = "Snowball"
@@ -22,7 +40,6 @@ public class CatTest {
         String actual = cat.getName();
         Assert.assertEquals(expected,actual);
     }
-
 
     @Test
     public void catSetNameTest{

@@ -1,6 +1,7 @@
 package io.zipcoder.pets;
 
-import io.zipcoder.pets.Cat;
+import io.zipcoder.polymorphism.Cat;
+import io.zipcoder.polymorphism.Pet;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -8,7 +9,7 @@ public class CatTest {
 
     @Test
     public void testInheritance() {
-        Pet p = new Cat();
+        Pet p = new Cat(null);
         Assert.assertTrue(p instanceof Pet);
     }
 
@@ -26,7 +27,7 @@ public class CatTest {
     }
 
     @Test
-    public void catSpeakTest{
+    public void catSpeakTest(){
         Cat cat = new Cat(null);
         String expected = "You may feed me now.";
         String actual = cat.speak();
@@ -34,15 +35,15 @@ public class CatTest {
     }
 
     @Test
-    public void catGetNameTest{
-        String expected = "Snowball"
+    public void catGetNameTest(){
+        String expected = "Snowball";
         Cat cat = new Cat(expected);
         String actual = cat.getName();
         Assert.assertEquals(expected,actual);
     }
 
     @Test
-    public void catSetNameTest{
+    public void catSetNameTest(){
         Cat cat = new Cat(null);
         String expected = "Snowball";
         cat.setName(expected);

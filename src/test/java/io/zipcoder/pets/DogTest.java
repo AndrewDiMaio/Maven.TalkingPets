@@ -1,5 +1,7 @@
 package io.zipcoder.pets;
 
+import io.zipcoder.polymorphism.Dog;
+import io.zipcoder.polymorphism.Pet;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,7 +11,7 @@ public class DogTest {
 
     @Test
     public void testInheritance() {
-        Pet p = new Dog();
+        Pet p = new Dog(null);
         Assert.assertTrue(p instanceof Pet);
     }
 
@@ -27,7 +29,7 @@ public class DogTest {
     }
 
     @Test
-    public void dogSpeakTest{
+    public void dogSpeakTest(){
         Dog dog = new Dog(null);
         String expected = "Squirrel!";
         String actual = dog.speak();
@@ -36,8 +38,8 @@ public class DogTest {
 
 
     @Test
-    public void dogGetNameTest{
-        String expected = "Fido"
+    public void dogGetNameTest(){
+        String expected = "Fido";
         Dog dog = new Dog(expected);
         String actual = dog.getName();
         Assert.assertEquals(expected,actual);
@@ -45,7 +47,7 @@ public class DogTest {
 
 
     @Test
-    public void dogSetNameTest{
+    public void dogSetNameTest(){
         Dog dog = new Dog(null);
         String expected = "Fido";
         dog.setName(expected);

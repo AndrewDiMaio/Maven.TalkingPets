@@ -1,5 +1,7 @@
 package io.zipcoder.pets;
 
+import io.zipcoder.polymorphism.Pet;
+import io.zipcoder.polymorphism.Tiger;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -7,7 +9,7 @@ public class TigerTest {
 
     @Test
     public void testInheritance() {
-        Pet p = new Tiger();
+        Pet p = new Tiger(null);
         Assert.assertTrue(p instanceof Pet);
     }
 
@@ -34,8 +36,8 @@ public class TigerTest {
     }
 
     @Test
-    public void tigerGetNameTest{
-        String expected = "Hobbes"
+    public void tigerGetNameTest(){
+        String expected = "Hobbes";
         Tiger tiger = new Tiger(expected);
         String actual = tiger.getName();
         Assert.assertEquals(expected,actual);
@@ -43,7 +45,7 @@ public class TigerTest {
 
 
     @Test
-    public void tigerSetNameTest{
+    public void tigerSetNameTest(){
         Tiger tiger = new Tiger(null);
         String expected = "Hobbes";
         tiger.setName(expected);

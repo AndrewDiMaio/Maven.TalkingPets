@@ -1,4 +1,5 @@
 package io.zipcoder.polymorphism;
+import java.lang.Comparable;
 
 public class Pet {
     private String speak;
